@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo -i
 sudo apt-get update
 sudo apt install unzip wget curl net-tools git -y
