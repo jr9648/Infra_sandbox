@@ -1,5 +1,5 @@
 resource "aws_key_pair" "ssh" {
-  key_name   = log-in-key
+  key_name   = "log-in-key"
   public_key = file("./module/public_key.pub")
 }
 
@@ -38,7 +38,7 @@ variable "egressrules" {
 }
 
 resource "aws_security_group" "frontend_backend_sg" {
-    name = "Allow HTTPS"
+    name = "Allow HTTPS frontend and backend"
 
     dynamic "ingress" {
         iterator = port 
@@ -86,7 +86,7 @@ variable "egressrules_database" {
 }
 
 resource "aws_security_group" "database_sg" {
-    name = "Allow HTTPS"
+    name = "Allow HTTPS database"
 
     dynamic "ingress" {
         iterator = port 
